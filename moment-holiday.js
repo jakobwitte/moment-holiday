@@ -296,7 +296,7 @@
       if (regions.length) { return compileRegions(locale, regions); }
       return moment.holidays[locale];
     } else {
-      console.log("Unsupported localen in moment-holiday: "+locale);
+      console.error("Unsupported locale in moment-holiday: "+locale);
     }
 
     return false;
