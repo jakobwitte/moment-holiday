@@ -56,7 +56,7 @@ gulp.task('build', function() {
 
   var src = generate(null, null, true, 'moment-holiday.js');
   var usSrc = generate('US', 'US', true, 'moment-holiday-us.js');
-  var allSrc = generate(locales, 'US', false, 'moment-holiday-all.js');
+  var allSrc = generate(locales, 'US', true, 'moment-holiday-all.js');
 
   return merge(src, usSrc, allSrc);
 });

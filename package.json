@@ -34,7 +34,7 @@
   },
   "homepage": "https://github.com/kodie/moment-holiday",
   "license": "MIT",
-  "main": "./build/moment-holiday-us.min.js",
+  "main": "./build/moment-holiday-all.min.js",
   "files": [
     "build/",
     "locale/"
