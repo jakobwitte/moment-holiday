@@ -1,19 +1,15 @@
-//! moment-holiday.js locale configuration
-//! locale : UK
-//! author : Kodie Grantham : https://github.com/kodie
-//! locale-author: DMCooper : https://github.com/SilentGamelan
-//
-/* regions :
-      EN : England
-      SL : Scotland
-      WL : Wales
-      NI : Northern Island
-*/
-
-(function() {
-  var moment = (typeof require !== 'undefined' && require !== null) && !require.amd ? require('moment') : this.moment;
-
-  moment.holidays.united_kingdom = {
+  //! moment-holiday.js locale configuration
+  //! locale : UK
+  //! author : Kodie Grantham : https://github.com/kodie
+  //! locale-author: DMCooper : https://github.com/SilentGamelan
+  //
+  /* regions :
+        EN : England
+        SL : Scotland
+        WL : Wales
+        NI : Northern Island
+  */
+  moment.holidays.uk = {
     "New Year's Day": {
       date: '1/1',
       keywords_n: ['eve']
@@ -115,6 +111,3 @@
       keywords: ['box']
     }
   };
-
-  if ((typeof module !== 'undefined' && module !== null ? module.exports : void 0) != null) { module.exports = moment; }
-}).call(this);

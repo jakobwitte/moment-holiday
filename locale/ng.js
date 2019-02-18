@@ -1,50 +1,46 @@
-//! moment-holiday.js locale configuration
-//! locale : Nigeria
-//! author : Emmanuel Zidafamor : https://github.com/e-zidaf
-/* States :
-       Abia
-       Abuja - FCT
-       Adamawa
-       Akwa Ibom 
-       Anambra
-       Bauchi
-       Bayelsa
-       Benue
-       Borno
-       Cross River
-       Delta
-       Ebonyi
-       Edo
-       Ekiti
-       Enugu
-       Gombe
-       Imo
-       Jigawa
-       Kaduna
-       Kano
-       Katsina
-       Kebbi
-       Kogi
-       Kwara
-       Lagos
-       Nasarawa
-       Niger
-       Ogun
-       Ondo
-       Osun
-       Oyo
-       Plateau
-       Rivers
-       Sokoto
-       Taraba
-       Yobe
-       Zamfara
-*/
-
-(function() {
-  var moment = (typeof require !== 'undefined' && require !== null) && !require.amd ? require('moment') : this.moment;
-
-  moment.holidays.nigeria = {
+  //! moment-holiday.js locale configuration
+  //! locale : Nigeria
+  //! author : Emmanuel Zidafamor : https://github.com/e-zidaf
+  /* States :
+        Abia
+        Abuja - FCT
+        Adamawa
+        Akwa Ibom 
+        Anambra
+        Bauchi
+        Bayelsa
+        Benue
+        Borno
+        Cross River
+        Delta
+        Ebonyi
+        Edo
+        Ekiti
+        Enugu
+        Gombe
+        Imo
+        Jigawa
+        Kaduna
+        Kano
+        Katsina
+        Kebbi
+        Kogi
+        Kwara
+        Lagos
+        Nasarawa
+        Niger
+        Ogun
+        Ondo
+        Osun
+        Oyo
+        Plateau
+        Rivers
+        Sokoto
+        Taraba
+        Yobe
+        Zamfara
+  */
+  moment.holidays.ng = {
     "New Year's Day": {
       date: '1/1',
       keywords: ['New Year'],
@@ -129,6 +125,3 @@
       regions: ['on']
     }
   };
-
-  if ((typeof module !== 'undefined' && module !== null ? module.exports : void 0) != null) { module.exports = moment; }
-}).call(this);

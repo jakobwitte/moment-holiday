@@ -1,39 +1,35 @@
-//! moment-holiday.js locale configuration
-//! locale : Switzerland
-//! author : Kodie Grantham : https://github.com/kodie
-/* regions :
-      AG : Aargau
-      AI : Appenzell Innerrhoden
-      AR : Appenzell Ausserrhoden
-      BE : Bern
-      BL : Basel-Landschaft
-      BS : Basel-Stadt
-      FR : Freiburg
-      GE : Genf
-      GL : Glarus
-      GR : Graubünden
-      JU : Jura
-      LU : Luzern
-      NE : Neuenburg
-      NW : Nidwalden
-      OW : Obwalden
-      SG : St. Gallen
-      SH : Schaffhausen
-      SO : Solothurn
-      SZ : Schwyz
-      TG : Thurgau
-      TI : Tessin
-      UR : Uri
-      VD : Waadt
-      VS : Wallis
-      ZG : Zug
-      ZH : Zürich
-*/
-
-(function() {
-  var moment = (typeof require !== 'undefined' && require !== null) && !require.amd ? require('moment') : this.moment;
-
-  moment.holidays.switzerland = {
+  //! moment-holiday.js locale configuration
+  //! locale : Switzerland
+  //! author : Kodie Grantham : https://github.com/kodie
+  /* regions :
+        AG : Aargau
+        AI : Appenzell Innerrhoden
+        AR : Appenzell Ausserrhoden
+        BE : Bern
+        BL : Basel-Landschaft
+        BS : Basel-Stadt
+        FR : Freiburg
+        GE : Genf
+        GL : Glarus
+        GR : Graubünden
+        JU : Jura
+        LU : Luzern
+        NE : Neuenburg
+        NW : Nidwalden
+        OW : Obwalden
+        SG : St. Gallen
+        SH : Schaffhausen
+        SO : Solothurn
+        SZ : Schwyz
+        TG : Thurgau
+        TI : Tessin
+        UR : Uri
+        VD : Waadt
+        VS : Wallis
+        ZG : Zug
+        ZH : Zürich
+  */
+  moment.holidays.ch = {
     "Neujahrstag": {
       date: '1/1',
       keywords: ['new', 'year']
@@ -176,6 +172,3 @@
       regions: ['ge']
     }
   };
-
-  if ((typeof module !== 'undefined' && module !== null ? module.exports : void 0) != null) { module.exports = moment; }
-}).call(this);

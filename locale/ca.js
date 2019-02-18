@@ -1,25 +1,21 @@
-//! moment-holiday.js locale configuration
-//! locale : Canada
-//! author : Kodie Grantham : https://github.com/kodie
-/* regions :
-      AB : Alberta
-      BC : British Columbia
-      MB : Manitoba
-      NB : New Brunswick
-      NL : Newfoundland and Labrador
-      NS : Nova Scotia
-      NT : Northwest Territories
-      NU : Nunavut
-      ON : Ontario
-      PE : Prince Edward Island
-      QC : Quebec
-      SK : Saskatchewan
-*/
-
-(function() {
-  var moment = (typeof require !== 'undefined' && require !== null) && !require.amd ? require('moment') : this.moment;
-
-  moment.holidays.canada = {
+  //! moment-holiday.js locale configuration
+  //! locale : Canada
+  //! author : Kodie Grantham : https://github.com/kodie
+  /* regions :
+        AB : Alberta
+        BC : British Columbia
+        MB : Manitoba
+        NB : New Brunswick
+        NL : Newfoundland and Labrador
+        NS : Nova Scotia
+        NT : Northwest Territories
+        NU : Nunavut
+        ON : Ontario
+        PE : Prince Edward Island
+        QC : Quebec
+        SK : Saskatchewan
+  */
+  moment.holidays.ca = {
     "New Year's Day": {
       date: '1/1',
       keywords_n: ['eve'],
@@ -108,6 +104,3 @@
       regions: ['on']
     }
   };
-
-  if ((typeof module !== 'undefined' && module !== null ? module.exports : void 0) != null) { module.exports = moment; }
-}).call(this);

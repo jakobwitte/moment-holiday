@@ -1,11 +1,7 @@
-//! moment-holiday.js locale configuration
-//! locale : Croatia / Hrvatska
-//! author : diomed : https://github.com/diomed
-
-(function() {
-  var moment = (typeof require !== 'undefined' && require !== null) && !require.amd ? require('moment') : this.moment;
-
-  moment.holidays.croatia = {
+  //! moment-holiday.js locale configuration
+  //! locale : Croatia / Hrvatska
+  //! author : diomed : https://github.com/diomed
+  moment.holidays.hr = {
     "Nova Godina": {
       date: '1/1',
       keywords: ['new', 'year']
@@ -62,6 +58,3 @@
       keywords: ['sv[\\s\\.]']
     }
   };
-
-  if ((typeof module !== 'undefined' && module !== null ? module.exports : void 0) != null) { module.exports = moment; }
-}).call(this);

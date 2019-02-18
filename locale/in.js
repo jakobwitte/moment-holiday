@@ -1,11 +1,7 @@
-//! moment-holiday.js locale configuration
-//! locale : India
-//! author : wonder2991 : https://github.com/wonder2991
-
-(function() {
-  var moment = (typeof require !== 'undefined' && require !== null) && !require.amd ? require('moment') : this.moment;
-
-  moment.holidays.india = {
+  //! moment-holiday.js locale configuration
+  //! locale : India
+  //! author : wonder2991 : https://github.com/wonder2991
+  moment.holidays.in = {
     "New Year's Day": {
       date: '1/1',
       keywords: ['naya', 'saal']
@@ -35,6 +31,3 @@
       keywords: ['christ']
     }
   };
-
-  if ((typeof module !== 'undefined' && module !== null ? module.exports : void 0) != null) { module.exports = moment; }
-}).call(this);

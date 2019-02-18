@@ -1,11 +1,7 @@
-//! moment-holiday.js locale configuration
-//! locale : Japan
-//! author : garroadran : https://github.com/garroadran/
-
-(function() {
-  var moment = (typeof require !== 'undefined' && require !== null) && !require.amd ? require('moment') : this.moment;
-
-  moment.holidays.japan = {
+  //! moment-holiday.js locale configuration
+  //! locale : Japan
+  //! author : garroadran : https://github.com/garroadran/
+  moment.holidays.jp = {
     "Gantan": {
       date: '1/1',
       keywords: ['new', 'year']
@@ -71,6 +67,3 @@
       keywords: ['emperor', 'birthday']
     }
   };
-
-  if ((typeof module !== 'undefined' && module !== null ? module.exports : void 0) != null) { module.exports = moment; }
-}).call(this);
