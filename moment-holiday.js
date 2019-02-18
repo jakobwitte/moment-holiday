@@ -292,17 +292,11 @@
     locale = regions[0].toLowerCase().replace(' ', '_');
     regions.shift();
 
-    if (!moment.holidays[locale]) {
-      try {
-        var path = './locale/';
-        if (__dirname.split('/').slice(-1).pop() == 'build') { path = '.' + path; }
-        require(path + locale);
-      } catch(e) { }
-    }
-
     if (moment.holidays[locale]) {
       if (regions.length) { return compileRegions(locale, regions); }
       return moment.holidays[locale];
+    } else {
+      console.log("Unsupported localen in moment-holiday: "+locale);
     }
 
     return false;
