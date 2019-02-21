@@ -52,15 +52,10 @@ moment().holiday('Christmas');
 </script>
 ```
 
-### Bower
-```
-bower install --save moment-holiday
-```
-
 ## Building
 `moment-holiday.js` does not come with any locales built-in by default. However, the following files are included for your convenience:
 
-* `build/moment-holiday-pkg.min.js` - moment-holiday with all available locales built-in.
+* `build/moment-holiday-all.min.js` - moment-holiday with all available locales built-in.
 * `build/moment-holiday-us.min.js` - moment-holiday with the `United States` locale built-in.
 * `build/moment-holiday.min.js` - Minified version of moment-holiday with no locales built-in.
 
@@ -76,7 +71,7 @@ You can also generate your own custom builds of moment-holiday by using gulp wit
 For example:
 
 ```
-gulp --name=moment-holiday-ar.js --locale=Argentina --locale=Easter --set=Argentina --min
+gulp --name=moment-holiday-ar.js --locale=ar --set=ar --min
 ```
 
 Sourcemaps are automatically created for all minified builds.
@@ -295,69 +290,67 @@ moment('2017-01-01').holidaysBetween();
 ## The Holidays
 
 ### Available Locales/Regions
-* [Argentina](locale/argentina.js)
-* [Canada](locale/canada.js)
-  * `Canada/AB` - Alberta
-  * `Canada/BC` - British Columbia
-  * `Canada/MB` - Manitoba
-  * `Canada/NB` - New Brunswick
-  * `Canada/NL` - Newfoundland and Labrador
-  * `Canada/NS` - Nova Scotia
-  * `Canada/NT` - Northwest Territories
-  * `Canada/NU` - Nunavut
-  * `Canada/ON` - Ontario
-  * `Canada/PE` - Prince Edward Island
-  * `Canada/QC` - Quebec
-  * `Canada/SK` - Saskatchewan
-* [Croatia](locale/croatia.js)
-* [Denmark](locale/denmark.js)
-* [Easter](locale/easter.js) (Easter Related Holidays)
-* [Finland](locale/finland.js)
-* [Germany](locale/germany.js)
-  * `Germany/BB` - Brandenburg
-  * `Germany/BW` - Baden-Württemberg
-  * `Germany/BY` - Bayern
-  * `Germany/HE` - Hessen
-  * `Germany/MV` - Mecklenburg-Vorpommern
-  * `Germany/NW` - Nordrhein-Westfalen
-  * `Germany/RP` - Rheinland-Pfalz
-  * `Germany/SN` - Sachsen
-  * `Germany/SL` - Saarland
-  * `Germany/ST` - Sachsen-Anhalt
-  * `Germany/TH` - Thüringen
-* [India](locale/india.js)
-* [Switzerland](locale/switzerland.js)
-  * `Switzerland/AG` – Aargau
-  * `Switzerland/AI` – Appenzell Innerrhoden
-  * `Switzerland/AR` – Appenzell Ausserrhoden
-  * `Switzerland/BE` – Bern
-  * `Switzerland/BL` – Basel-Landschaft
-  * `Switzerland/BS` – Basel-Stadt
-  * `Switzerland/FR` – Freiburg
-  * `Switzerland/GE` – Genf
-  * `Switzerland/GL` – Glarus
-  * `Switzerland/GR` – Graubünden
-  * `Switzerland/JU` – Jura
-  * `Switzerland/LU` – Luzern
-  * `Switzerland/NE` – Neuenburg
-  * `Switzerland/NW` – Nidwalden
-  * `Switzerland/OW` – Obwalden
-  * `Switzerland/SG` – St. Gallen
-  * `Switzerland/SH` – Schaffhausen
-  * `Switzerland/SO` – Solothurn
-  * `Switzerland/SZ` – Schwyz
-  * `Switzerland/TG` – Thurgau
-  * `Switzerland/TI` – Tessin
-  * `Switzerland/UR` – Uri
-  * `Switzerland/VD` – Waadt
-  * `Switzerland/VS` – Wallis
-  * `Switzerland/ZG` – Zug
-  * `Switzerland/ZH` – Zürich
-* [United States](locale/united_states.js) (Default)
+* [Argentina](locale/ar.js)
+* [Canada](locale/ca.js)
+  * `CA/AB` - Alberta
+  * `CA/BC` - British Columbia
+  * `CA/MB` - Manitoba
+  * `CA/NB` - New Brunswick
+  * `CA/NL` - Newfoundland and Labrador
+  * `CA/NS` - Nova Scotia
+  * `CA/NT` - Northwest Territories
+  * `CA/NU` - Nunavut
+  * `CA/ON` - Ontario
+  * `CA/PE` - Prince Edward Island
+  * `CA/QC` - Quebec
+  * `CA/SK` - Saskatchewan
+* [Croatia](locale/hr.js)
+* [Denmark](locale/dendkmark.js)
+* [Finland](locale/fi.js)
+* [Germany](locale/de.js)
+  * `DE/BB` - Brandenburg
+  * `DE/BW` - Baden-Württemberg
+  * `DE/BY` - Bayern
+  * `DE/HE` - Hessen
+  * `DE/MV` - Mecklenburg-Vorpommern
+  * `DE/NW` - Nordrhein-Westfalen
+  * `DE/RP` - Rheinland-Pfalz
+  * `DE/SN` - Sachsen
+  * `DE/SL` - Saarland
+  * `DE/ST` - Sachsen-Anhalt
+  * `DE/TH` - Thüringen
+* [India](locale/in.js)
+* [Switzerland](locale/ch.js)
+  * `CH/AG` – Aargau
+  * `CH/AI` – Appenzell Innerrhoden
+  * `CH/AR` – Appenzell Ausserrhoden
+  * `CH/BE` – Bern
+  * `CH/BL` – Basel-Landschaft
+  * `CH/BS` – Basel-Stadt
+  * `CH/FR` – Freiburg
+  * `CH/GE` – Genf
+  * `CH/GL` – Glarus
+  * `CH/GR` – Graubünden
+  * `CH/JU` – Jura
+  * `CH/LU` – Luzern
+  * `CH/NE` – Neuenburg
+  * `CH/NW` – Nidwalden
+  * `CH/OW` – Obwalden
+  * `CH/SG` – St. Gallen
+  * `CH/SH` – Schaffhausen
+  * `CH/SO` – Solothurn
+  * `CH/SZ` – Schwyz
+  * `CH/TG` – Thurgau
+  * `CH/TI` – Tessin
+  * `CH/UR` – Uri
+  * `CH/VD` – Waadt
+  * `CH/VS` – Wallis
+  * `CH/ZG` – Zug
+  * `CH/ZH` – Zürich
+* [United Kingdom](locale/uk.js)
+* [United States](locale/us.js) (Default)
 
 Rather than listing all of the holidays here, to see available holidays, view the source of the locale file.
-
-Easter related holidays for any locale will only be available if the Easter locale has been added. It's automatically added if you are using Node. (You can still easily add them in even when not using Node. See: [Modifying Holidays](#modifying-holidays))
 
 ### Modifying Holidays
 You can add and remove holidays by using the following helper functions:
@@ -443,32 +436,32 @@ moment().holidays();
 Simply loads a locale file and makes it available without modifying the current holidays.
 
 ```javascript
-moment.modifyHolidays.load('Argentina');
+moment.modifyHolidays.load('ar');
 
-moment.modifyHolidays.load(['Canada', 'Easter']);
+moment.modifyHolidays.load(['us', 'ca']);
 ```
 
 ##### Adding/Setting Locales/Regions
 You can also use these functions to set or add holidays from an available locale file:
 
 ```javascript
-moment.modifyHolidays.set('Canada').add('Easter');
+moment.modifyHolidays.set('ca');
 moment('2001-12-26').isHoliday('Boxing Day');
 //true
 
-moment.modifyHolidays.add('Easter').remove('Good Friday');
-moment().holiday(['Easter Sunday', 'Good Friday']);
-//{ 'Easter Sunday': moment("2017-04-16T00:00:00.000") }
+moment.modifyHolidays.add('dk').remove('Langfredag');
+moment().holiday(['Påskedag', 'Langfredag']);
+//{ 'Påskedag': moment("2017-04-16T00:00:00.000") }
 ```
 
 You use these same functions to specify regions to add:
 
 ```javascript
-moment.modifyHolidays.set('Germany/SN');
+moment.modifyHolidays.set('DE/SN');
 moment('2017-11-22').isHoliday();
 //Buß- und Bettag
 
-moment.modifyHolidays.set('Canada/QC/ON');
+moment.modifyHolidays.set('CA/QC/ON');
 moment().holidays(['boxing', 'baptiste']);
 //{ 'Boxing Day': moment("2017-12-26T00:00:00.000"),
 //  'St. Jean Baptiste Day': moment("2017-06-24T00:00:00.000") }
@@ -477,12 +470,11 @@ moment().holidays(['boxing', 'baptiste']);
 You can also cherry-pick the holidays you want from a locale by passing a string or an array of strings as the second parameter:
 
 ```javascript
-moment.modifyHolidays.add('Easter', ['ascension', 'pentecost']);
-moment().holiday(['ascension', 'pentecost']);
-//{ 'Ascension Day': moment("2017-05-25T00:00:00.000"),
-//  'Pentecost Sunday': moment("2017-06-04T00:00:00.000") }
+moment.modifyHolidays.add('UK', ['Boxing Day']);
+moment().holiday(['Boxing Day']);
+//{ 'Boxing Day': moment("2017-12-26T00:00:00.000" }
 
-moment.modifyHolidays.add('Germany/BB', 'Ostersonntag');
+moment.modifyHolidays.add('DE/BB', 'Ostersonntag');
 moment('2001-09-14').isHoliday();
 //[ 'Easter Sunday', 'Ostersonntag' ]
 ```
@@ -491,9 +483,8 @@ moment('2001-09-14').isHoliday();
 
 ```html
 <script src="./moment-holiday/locale/canada.js"></script>
-<script src="./moment-holiday/locale/easter.js"></script>
 <script>
-  moment.modifyHolidays.set('Canada').add('Easter');
+  moment.modifyHolidays.set('Canada');
   moment('2001-12-26').isHoliday('Boxing Day');
   //true
 </script>
@@ -560,7 +551,7 @@ moment().holiday('Friday 13th');
 //  moment("2017-10-13T00:00:00.000") ]
 ```
 
-You can also see how we take advantage of this by viewing the source of [locale/easter.js](locale/easter.js).
+You can also see how we take advantage of this by viewing the source of [easter.js](easter.js).
 
 ## Locales
 Locale files are simply files that add holidays and special holiday parsing functionality for other countries. They are all located in the `locale/` folder.
@@ -571,7 +562,7 @@ Pull Requests will be accepted (and encouraged!) but must meet the following gui
   * Invalid: `local/Japan.js` or `moment.holidays.Japan`
 * Must pass `npm test`.
 
-See the source of [locale/canada.js](locale/canada.js) and [locale/easter.js](locale/easter.js) for good examples of locale files.
+See the source of [locale/canada.js](locale/ca.js) and [easter.js](easter.js) for good examples of locale files.
 
 ## License
 MIT. See the License file for more info.

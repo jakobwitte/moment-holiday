@@ -1,6 +1,6 @@
 {
   "name": "moment-holiday",
-  "version": "1.5.1",
+  "version": "1.6.0",
   "description": "A Moment.js plugin for handling holidays.",
   "keywords": [
     "moment",
@@ -27,12 +27,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/kodie/moment-holiday.git"
+    "url": "https://github.com/jakobwitte/moment-holiday.git"
   },
   "bugs": {
-    "url": "https://github.com/kodie/moment-holiday/issues"
+    "url": "https://github.com/jakobwitte/moment-holiday/issues"
   },
-  "homepage": "https://github.com/kodie/moment-holiday",
+  "homepage": "https://github.com/jakobwitte/moment-holiday",
   "license": "MIT",
   "main": "./build/moment-holiday-all.min.js",
   "files": [
