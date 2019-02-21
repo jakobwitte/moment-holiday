@@ -1,7 +1,6 @@
-(function() {
-  var moment = (typeof require !== 'undefined' && require !== null) && !require.amd ? require('moment') : this.moment;
-
-  moment.holidays.colombia = {
+  //! moment-holiday.js locale configuration
+  //! locale : Colombia
+  moment.holidays.co = {
     "Día de los Reyes Magos": {
       date: '1/9',
       keywords: ['reyes magos']
@@ -60,5 +59,3 @@
       keywords: ['christmas', 'navidad', 'merryxmas']
    }    
   };
-  if ((typeof module !== 'undefined' && module !== null ? module.exports : void 0) != null) { module.exports = moment; }
-}).call(this);

@@ -1,11 +1,7 @@
-//! moment-holiday.js locale configuration
-//! locale : Argentina
-//! author : NahuelOvejero : https://github.com/NahuelOvejero
-
-(function() {
-  var moment = (typeof require !== 'undefined' && require !== null) && !require.amd ? require('moment') : this.moment;
-
-  moment.holidays.argentina = {
+  //! moment-holiday.js locale configuration
+  //! locale : Argentina
+  //! author : NahuelOvejero : https://github.com/NahuelOvejero
+  moment.holidays.ar = {
     "Año Nuevo": {
       date: '1/1',
       keywords: ['ano', 'new', 'year']
@@ -70,6 +66,3 @@
       keywords: ['christmas']
     }
   };
-
-  if ((typeof module !== 'undefined' && module !== null ? module.exports : void 0) != null) { module.exports = moment; }
-}).call(this);

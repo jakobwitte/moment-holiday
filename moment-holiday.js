@@ -4,9 +4,18 @@
 //! license : MIT
 //! https://github.com/kodie/moment-holiday
 
-(function() {
-  var moment = (typeof require !== 'undefined' && require !== null) && !require.amd ? require('moment') : this.moment;
+(function (root, factory) {
+  "use strict";
 
+  /*global define*/
+  if (typeof module === 'object' && module.exports) {
+    module.exports = factory(require('moment')); // Node
+  } else if (typeof define === 'function' && define.amd) {
+    define(['moment'], factory);                 // AMD
+  } else {
+    factory(root.moment);                        // Browser
+  }
+}(this, function (moment) {
   var parserExtensions = [];
 
   var parseHoliday = function(self, date, adjust) {
@@ -283,17 +292,11 @@
     locale = regions[0].toLowerCase().replace(' ', '_');
     regions.shift();
 
-    if (!moment.holidays[locale]) {
-      try {
-        var path = './locale/';
-        if (__dirname.split('/').slice(-1).pop() == 'build') { path = '.' + path; }
-        require(path + locale);
-      } catch(e) { }
-    }
-
     if (moment.holidays[locale]) {
       if (regions.length) { return compileRegions(locale, regions); }
       return moment.holidays[locale];
+    } else {
+      console.error("Unsupported locale in moment-holiday: "+locale);
     }
 
     return false;
@@ -603,5 +606,67 @@
     }
   };
 
-  if ((typeof module !== 'undefined' && module !== null ? module.exports : void 0) != null) { module.exports = moment; }
-}).call(this);
+  // Calculations for Easter:
+  var easter = function(y) {
+    var a = y % 19;
+    var b = Math.floor(y/100);
+    var c = y % 100;
+    var d = Math.floor(b/4);
+    var e = b % 4;
+    var f = Math.floor((b+8)/25);
+    var g = Math.floor((b-f+1)/3);
+    var h = (19*a+b-d-g+15) % 30;
+    var i = Math.floor(c/4);
+    var k = c % 4;
+    var l = (32+2*e+2*i-h-k) % 7;
+    var m = Math.floor((a+11*h+22*l)/451);
+    var n = Math.floor((h+l-7*m+114)/31);
+    var p = (h+l-7*m+114) % 31;
+    p = Math.round(p+1);
+
+    // n = month, p = date
+    return moment([y, (n - 1), p]);
+  }
+
+  /*var easter = function(y) {
+    var c = Math.floor(y / 100);
+    var n = y - 19 * Math.floor(y / 19);
+    var k = Math.floor((c - 17) / 25);
+    var i = c - Math.floor(c / 4) - Math.floor((c - k) / 3) + 19 * n + 15;
+    i = i - 30 * Math.floor((i / 30));
+    i = i - Math.floor(i / 28) * (1 - Math.floor(i / 28) * Math.floor(29 / (i + 1)) * Math.floor((21 - n) / 11));
+    var j = y + Math.floor(y / 4) + i + 2 - c + Math.floor(c / 4);
+    j = j - 7 * Math.floor(j / 7);
+    var l = i - j;
+    var m = 3 + Math.floor((l + 40) / 44);
+    var d = l + 28 - 31 * Math.floor(m / 4);
+    return moment([y, (m - 1), d]);
+  };*/
+
+  moment.modifyHolidays.extendParser(function(m, date){
+    if (~date.indexOf('easter')) {
+      var dates = date.split('|');
+      var ds = [];
+
+      for (i = 0; i < dates.length; i++) {
+        if (dates[i].substring(0, 6) === 'easter') {
+          var e = easter(m.year());
+
+          if (dates[i].charAt(6) === '-') { e.subtract(dates[i].substring(7), 'days'); }
+          if (dates[i].charAt(6) === '+') { e.add(dates[i].substring(7), 'days'); }
+
+          if (dates.length === 1) { return e; }
+          ds.push(e.format('M/D'));
+        } else {
+          ds.push(dates[i]);
+        }
+      }
+
+      if (ds.length) { return ds.join('|'); }
+    }
+  });
+
+	// LOCALES
+
+	return moment;
+}));

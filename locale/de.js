@@ -1,24 +1,20 @@
-//! moment-holiday.js locale configuration
-//! locale : Germany
-//! author : Kodie Grantham : https://github.com/kodie
-/* regions :
-      BB : Brandenburg
-      BW : Baden-Württemberg
-      BY : Bayern
-      HE : Hessen
-      MV : Mecklenburg-Vorpommern
-      NW : Nordrhein-Westfalen
-      RP : Rheinland-Pfalz
-      SN : Sachsen
-      SL : Saarland
-      ST : Sachsen-Anhalt
-      TH : Thüringen
-*/
-
-(function() {
-  var moment = (typeof require !== 'undefined' && require !== null) && !require.amd ? require('moment') : this.moment;
-
-  moment.holidays.germany = {
+  //! moment-holiday.js locale configuration
+  //! locale : Germany
+  //! author : Kodie Grantham : https://github.com/kodie
+  /* regions :
+        BB : Brandenburg
+        BW : Baden-Württemberg
+        BY : Bayern
+        HE : Hessen
+        MV : Mecklenburg-Vorpommern
+        NW : Nordrhein-Westfalen
+        RP : Rheinland-Pfalz
+        SN : Sachsen
+        SL : Saarland
+        ST : Sachsen-Anhalt
+        TH : Thüringen
+  */
+  moment.holidays.de = {
     "Neujahrstag": {
       date: '1/1',
       keywords: ['new', 'year']
@@ -93,6 +89,3 @@
       keywords_y: ['zweiter']
     }
   };
-
-  if ((typeof module !== 'undefined' && module !== null ? module.exports : void 0) != null) { module.exports = moment; }
-}).call(this);

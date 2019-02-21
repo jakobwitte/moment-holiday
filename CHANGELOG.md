@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 ## [Unreleased]
 
 
+## [1.6.0] - 2019-02-21
+### Added
+- Added support for webpack.
+
+### Removed
+- Removed support for bower.
+
 ## [1.5.1] - 2017-08-03
 ### Removed
 - `xo` as a dependency 😑.

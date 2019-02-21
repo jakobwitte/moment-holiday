@@ -1,4 +1,6 @@
 var argv = require('yargs').argv,
+  fs = require('fs'),
+  merge = require('merge-stream'),
   gulp = require('gulp'),
   gulpif = require('gulp-if'),
   inject = require('gulp-inject-string'),
@@ -8,30 +10,32 @@ var argv = require('yargs').argv,
   uglify = require('gulp-uglify');
 
 function generate(locales, set, minify, filename) {
-  var append = '', files = ['moment-holiday.js'];
+  var localePaths = [], localeSrc = [], srcFile = ['moment-holiday.js'];
 
   if (locales && locales.length) {
     if (locales.constructor !== Array) { locales = [locales]; }
-    locales = locales.map(function(l){
+    localePaths = locales.map(function(l){
       return 'locale/' + l.toLowerCase().replace(' ', '_') + '.js';
     });
 
-    files = files.concat(locales);
+    localePaths.forEach(function(l) {
+      localeSrc.push(fs.readFileSync(l, "utf8"));
+    });
   }
 
   if (!set && locales && locales.length === 1) { set = [locales[0]]; }
 
   if (set) {
     if (set.constructor !== Array) { set = [set]; }
-    append = "\n//! Set default locales\n(function() {\n  var moment = (typeof require !== 'undefined' && require !== null) && !require.amd ? require('moment') : this.moment;";
-    set.forEach(function(l){ append += '\n  moment.modifyHolidays.add("' + l + '");'; });
-    append += '\n}).call(this);';
+    set.forEach(function(s) {
+      localeSrc.push('  moment.modifyHolidays.add("' + s + '");');
+    });
   }
 
-  return gulp.src(files)
+  return gulp.src(srcFile)
     .pipe(gulpif(minify, sourcemaps.init()))
     .pipe(concat(filename || 'moment-holiday-custom.js'))
-    .pipe(gulpif(append !== '', inject.append(append)))
+    .pipe(gulpif(localeSrc.length > 0, inject.after('// LOCALES', '\n\n'+localeSrc.join('\n\n'))))
     .pipe(gulpif(minify, uglify({output: {comments: '/^!/'}})))
     .pipe(gulpif(minify, rename({ extname: '.min.js' })))
     .pipe(gulpif(minify, sourcemaps.write('.')))
@@ -39,7 +43,7 @@ function generate(locales, set, minify, filename) {
 }
 
 gulp.task('default', function() {
-  generate(argv.locale, argv.set, argv.min, argv.name);
+  return generate(argv.locale, argv.set, argv.min, argv.name);
 });
 
 gulp.task('build', function() {
@@ -50,7 +54,9 @@ gulp.task('build', function() {
     locales.push(locale);
   });
 
-  generate(null, null, true, 'moment-holiday.js');
-  generate(['United States', 'Easter'], 'United States', true, 'moment-holiday-us.js');
-  generate(locales, 'United States', true, 'moment-holiday-pkg.js');
+  var src = generate(null, null, true, 'moment-holiday.js');
+  var usSrc = generate('US', 'US', true, 'moment-holiday-us.js');
+  var allSrc = generate(locales, 'US', true, 'moment-holiday-all.js');
+
+  return merge(src, usSrc, allSrc);
 });
