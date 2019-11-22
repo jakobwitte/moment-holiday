@@ -39,11 +39,11 @@
       keywords: ['andenpinsedag', 'pinsedag', 'whit', 'monday']
     },
     "Juledag": {
-      date: '12/24',
+      date: '12/25',
       keywords: ['juledag', 'christmas']
     },
     "Anden juledag": {
-      date: '12/25',
+      date: '12/26',
       keywords: ['andenjuledag'],
       keywords_y: ['anden']
     }

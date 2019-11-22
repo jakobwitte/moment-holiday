@@ -5,6 +5,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 ## [Unreleased]
 
+## [1.6.1] - 2019-11-22
+### Added
+- Fixed Danish holidays
 
 ## [1.6.0] - 2019-02-21
 ### Added
