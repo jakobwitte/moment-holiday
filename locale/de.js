@@ -19,6 +19,11 @@
       date: '1/1',
       keywords: ['new', 'year']
     },
+    "Heilige Drei Könige": {
+      date: '1/6',
+      keywords: ['konige'],
+      regions: ['bw', 'by', 'st']
+    },
     "Karfreitag": {
       date: 'easter-2',
       keywords: ['good', 'friday']
@@ -33,12 +38,7 @@
       date: 'easter+1',
       keywords: ['easter', 'monday']
     },
-    "Heilige Drei Könige": {
-      date: '1/6',
-      keywords: ['konige'],
-      regions: ['bw', 'by', 'st']
-    },
-    "Maifeiertag": {
+    "Tag der Arbeit": {
       date: '5/1'
     },
     "Christi Himmelfahrt": {
@@ -75,13 +75,13 @@
       date: '11/1',
       regions: ['bw', 'by', 'nw', 'rp', 'sl']
     },
-    "Buß- und Bettag": {
+    /*"Buß- und Bettag": {
       date: '11/(3,[17])',
       keywords: ['bub'],
       regions: ['sn']
-    },
-    "Weihnachten": {
-      date: '12/24',
+    },*/
+    "Weihnachtstag": {
+      date: '12/25',
       keywords: ['christmas']
     },
     "Zweiter Weihnachtsfeiertag": {
