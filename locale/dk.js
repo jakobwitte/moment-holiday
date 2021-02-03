@@ -28,7 +28,7 @@
     },
     "Kristi himmelfartsdag": {
       date: 'easter+39',
-      kaywords: ['ascension']
+      keywords: ['ascension']
     },
     "Pinsedag": {
       date: 'easter+49',
