@@ -43,7 +43,7 @@
     },
     "Christi Himmelfahrt": {
       date: 'easter+39',
-      kaywords: ['ascension']
+      keywords: ['ascension']
     },
     "Pfingstsonntag": {
       date: 'easter+49',
